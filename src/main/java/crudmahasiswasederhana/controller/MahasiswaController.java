@@ -26,9 +26,10 @@ public class MahasiswaController implements MahasiswaInterface {
         return o;
     }
 
+    @Override
     public void update(Mahasiswa o) throws SQLException {
         st = ConnectionHelper.getConnection().prepareStatement(
-                "Update Mahasiswa set nama=?, alamat=?, where nim=?");
+                "Update Mahasiswa set nama=?, alamat=? where nim=?");
 
         st.setString(1, o.getNim());
         st.setString(2, o.getNama());

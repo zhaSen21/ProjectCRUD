@@ -103,8 +103,8 @@ public class MahasiswaFrame extends javax.swing.JFrame {
         nimText = new javax.swing.JTextField();
         namaText = new javax.swing.JTextField();
         alamatText = new javax.swing.JTextField();
-        tambahBtn = new javax.swing.JButton();
         ubahBtn = new javax.swing.JButton();
+        tambahBtn = new javax.swing.JButton();
         hapusBtn = new javax.swing.JButton();
         jScrollPanel = new javax.swing.JScrollPane();
         mahasiswaTable = new javax.swing.JTable();
@@ -117,9 +117,10 @@ public class MahasiswaFrame extends javax.swing.JFrame {
 
         alamatLabel.setText("Alamat");
 
-        nimText.addActionListener(new java.awt.event.ActionListener() {
+        ubahBtn.setText("Ubah");
+        ubahBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nimTextActionPerformed(evt);
+                ubahBtnActionPerformed(evt);
             }
         });
 
@@ -127,13 +128,6 @@ public class MahasiswaFrame extends javax.swing.JFrame {
         tambahBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tambahBtnActionPerformed(evt);
-            }
-        });
-
-        ubahBtn.setText("Ubah");
-        ubahBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ubahBtnActionPerformed(evt);
             }
         });
 
@@ -204,8 +198,8 @@ public class MahasiswaFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tambahBtn)
-                    .addComponent(ubahBtn)
-                    .addComponent(hapusBtn))
+                    .addComponent(hapusBtn)
+                    .addComponent(ubahBtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -229,21 +223,6 @@ public class MahasiswaFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_tambahBtnActionPerformed
 
-    private void ubahBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ubahBtnActionPerformed
-        try {
-            
-            Mahasiswa mhs = new Mahasiswa(null, null, null);
-            mhs.setNim(nimText.getText());
-            mhs.setNama(namaText.getText());
-            mhs.setAlamat(alamatText.getText());
-            mhsServis.update(mhs);
-            this.statusAwal();
-            JOptionPane.showMessageDialog(this, "Data Berhasil Diubah 2");
-        } catch (SQLException ex) {
-            Logger.getLogger(MahasiswaFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_ubahBtnActionPerformed
-
     private void hapusBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusBtnActionPerformed
         try {
 
@@ -257,9 +236,20 @@ public class MahasiswaFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_hapusBtnActionPerformed
 
-    private void nimTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nimTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nimTextActionPerformed
+    private void ubahBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ubahBtnActionPerformed
+        // TODO add your handling code here:                
+                try {
+            Mahasiswa mhs = new Mahasiswa(null, null, null);
+            mhs.setNim(nimText.getText());
+            mhs.setNama(namaText.getText());
+            mhs.setAlamat(alamatText.getText());
+            mhsServis.update(mhs);
+            this.statusAwal();
+            JOptionPane.showMessageDialog(this, "Data Berhasil Diubah");
+        } catch (SQLException ex) {
+            Logger.getLogger(MahasiswaFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_ubahBtnActionPerformed
 
     /**
      * @param args the command line arguments

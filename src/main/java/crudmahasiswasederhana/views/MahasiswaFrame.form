@@ -77,8 +77,8 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="tambahBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="ubahBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="hapusBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ubahBtn" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jScrollPanel" min="-2" pref="334" max="-2" attributes="0"/>
@@ -104,21 +104,10 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="nimText">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nimTextActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="namaText">
     </Component>
     <Component class="javax.swing.JTextField" name="alamatText">
-    </Component>
-    <Component class="javax.swing.JButton" name="tambahBtn">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Tambah"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tambahBtnActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="ubahBtn">
       <Properties>
@@ -126,6 +115,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ubahBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="tambahBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tambah"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tambahBtnActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="hapusBtn">
